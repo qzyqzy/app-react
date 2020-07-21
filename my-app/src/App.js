@@ -3,6 +3,7 @@ import './App.css';
 
 import Hello from './views/hello'
 import If from './views/if'
+import For from './views/for'
 
 // 函数式组件
 function FunDom() {
@@ -31,12 +32,11 @@ let appDom = (
     <FunDom />
     <ClassDom />
     <hr />
-    <h2>基本使用</h2>
     <Hello></Hello>
     <hr />
-    <h2>条件判断</h2>
     <If />
     <hr />
+    <For />
     <hr />
     <hr />
   </div>

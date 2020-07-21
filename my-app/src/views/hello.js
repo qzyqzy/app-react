@@ -6,6 +6,7 @@ let htmlStr = '<b>加粗显示的文本、富文本</b>'
 function Hello() {
     return (
         <div>
+            <h2>基本使用</h2>
             <h1 className="hello">{message}</h1>
             <div>
                 <p>{message.split('').join('-')}</p>
