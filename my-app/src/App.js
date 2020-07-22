@@ -5,7 +5,7 @@ import Hello from './views/hello'
 import If from './views/if'
 import For from './views/for'
 import Event from './views/event'
-
+import Input from './views/input'
 
 // 函数式组件
 function FunDom() {
@@ -41,6 +41,8 @@ let appDom = (
     <For />
     <hr />
     <Event />
+    <hr />
+    <Input />
     <hr />
   </div>
 )
