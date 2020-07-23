@@ -36,7 +36,7 @@ class Event extends React.Component {
         console.log(ev.nativeEvent.currentTarget) // 绑定事件的元素
     }
     // 需要传递参数时要再返回一个函数 
-    // this.onRed2('点击事件2') 否则这里谁执行
+    // this.onRed2('点击事件2') 否则这里会先执行一次
     // onRed2 = () => {
     //     console.log('onRed2事件触发，箭头函数 此时可以获取到本组件')
     //     console.log(this)
