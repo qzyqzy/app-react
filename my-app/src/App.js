@@ -6,7 +6,7 @@ import If from './views/if'
 import For from './views/for'
 import Event from './views/event'
 import Input from './views/input'
-
+import PropsEvent from './views/props/propsEvent'
 // 函数式组件
 function FunDom() {
   return (
@@ -44,6 +44,7 @@ let appDom = (
     <hr />
     <Input />
     <hr />
+    <PropsEvent />
   </div>
 )
 
