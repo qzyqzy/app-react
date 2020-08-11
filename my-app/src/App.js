@@ -1,4 +1,13 @@
 import React from 'react';
+// 地址栏路由 HashRouter => hash  BrowserRouter => history
+// 声明式导航
+// Link NavLink 可以设置选中时的样式
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink as Link
+} from "react-router-dom";
 import './App.css';
 
 import Hello from './views/hello'
@@ -7,45 +16,58 @@ import For from './views/for'
 import Event from './views/event'
 import Input from './views/input'
 import PropsEvent from './views/props/propsEvent'
-// 函数式组件
-function FunDom() {
-  return (
-    <div>
-      <h4>这是函数式组件</h4>
-    </div>
-  )
-}
-
-// class 组件
-
-class ClassDom extends React.Component {
-  render() {
-    return (
-      <div>
-        <h4>这是class组件</h4>
-      </div>
-    )
-  }
-}
-
+import RouterDom from './views/router'
 let appDom = (
-  <div>
-    <h4>JSX语法</h4>
-    <FunDom />
-    <ClassDom />
-    <hr />
-    <Hello></Hello>
-    <hr />
-    <If />
-    <hr />
-    <For />
-    <hr />
-    <Event />
-    <hr />
-    <Input />
-    <hr />
-    <PropsEvent />
-  </div>
+  <Router>
+    <div>
+      <nav className="router-wrap">
+        <ul>
+          <li>
+            <Link exact to="/" activeClassName="router-select">Hello-基本使用</Link>
+          </li>
+          <li>
+            <Link to="/if" activeClassName="router-select">条件判断</Link>
+          </li>
+          <li>
+            <Link to="/for" activeClassName="router-select">循环</Link>
+          </li>
+          <li>
+            <Link to="/event" activeClassName="router-select">事件</Link>
+          </li>
+          <li>
+            <Link to="/input" activeClassName="router-select">表单</Link>
+          </li>
+          <li>
+            <Link to="/props" activeClassName="router-select">props</Link>
+          </li>
+          <li>
+            <Link to="/router" activeClassName="router-select">路由</Link>
+          </li>
+        </ul>
+      </nav>
+      <Switch>
+        <Route path="/if">
+          <If />
+        </Route>
+        <Route path="/for">
+          <For />
+        </Route>
+        <Route path="/event">
+          <Event />
+        </Route>
+        <Route path="/input">
+          <Input />
+        </Route>
+        {/* 使用render */}
+        <Route path="/props" render={() => <PropsEvent />}></Route>
+        <Route path="/router" component={RouterDom}></Route>
+        <Route path="/">
+          <Hello />
+        </Route>
+      </Switch>
+
+    </div>
+  </Router>
 )
 
 function App() {
