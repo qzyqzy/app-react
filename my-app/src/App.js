@@ -16,6 +16,7 @@ import For from './views/for'
 import Event from './views/event'
 import Input from './views/input'
 import PropsEvent from './views/props/propsEvent'
+import ReduxsEvent from './views/reduxs/reduxsEvent'
 import RouterDom from './views/router'
 let appDom = (
   <Router>
@@ -41,6 +42,9 @@ let appDom = (
             <Link to="/props" activeClassName="router-select">props</Link>
           </li>
           <li>
+            <Link to="/redux" activeClassName="router-select">redux</Link>
+          </li>
+          <li>
             <Link to="/router" activeClassName="router-select">路由</Link>
           </li>
         </ul>
@@ -58,7 +62,7 @@ let appDom = (
         <Route path="/input">
           <Input />
         </Route>
-        {/* 使用render */}
+        <Route path="/redux" component={ReduxsEvent} />
         <Route path="/props" render={() => <PropsEvent />}></Route>
         <Route path="/router" component={RouterDom}></Route>
         <Route path="/">
