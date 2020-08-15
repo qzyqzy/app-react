@@ -1,16 +1,17 @@
-import { createStore } from 'redux'
+import { createStore ,combineReducers} from 'redux'
 
-let defaultStore = []
-
-function reducer(state = defaultStore, action) { 
+// combineReducers 管理多个reducer
+let list = (state = [], action) =>{ 
     let { type, obj } = action
     switch (type) {
         case 'ADD':
             return state = [obj, ...state]
         default:
-            break;
+            return state
     }
 }
+
+let reducer = combineReducers({list})
 
 const store = createStore(reducer)
 

@@ -7,12 +7,12 @@ class List extends React.Component {
             this.forceUpdate()
         })
     }
-    render() {
+    render() {   
         return (
             <ul>
                 <h2>这是list组件 上面添加的内容会显示在这里</h2>
                 {
-                    store.getState()&&store.getState().map(item =>
+                    store.getState()&&store.getState().list.map(item =>
                         <li key={item.id}>{item.value}</li>
                     )
                 }
